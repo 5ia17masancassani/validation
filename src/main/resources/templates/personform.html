@@ -1,0 +1,38 @@
+<!DOCTYPE HMTL>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Personen Daten Evaluieren</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	rel="stylesheet"></link>
+</head>
+<body>
+	<div class="p-3">
+		<h4>Person-Daten evaluieren</h4>
+		<form action="#" th:action="@{/}" th:object="${person}" method="post"
+			class="col-sm-6">
+			<div class="form-group">
+				<label for="nameinput">Name:</label> <input type="text"
+					class="form-control" id="nameinput" th:field="*{name}" maxlength="8" required/>
+			</div>
+			<div class="form-group">
+				<label for="ageinput">Alter:</label> <input type="number"
+					class="form-control" id="ageinput" th:field="*{age}" required/>
+			</div>
+			<div class="form-group">
+				<label for="gradeinput">Note:</label> <input type="number"
+					class="form-control" id="gradeinput" th:field="*{grade}" step="0.5" min="1" max="6"/>
+			</div>
+			<p>
+				<input type="submit" class="btn btn-success"
+					value="Eingabe Validieren" />
+			</p>
+		</form>
+		<footer>
+			<p>
+				<small>© 2019 / Author: M.Sancassani</small>
+			</p>
+		</footer>
+	</div>
+</body>
+</html>
